@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Shell script for packer's shell processor (any preprocessing will be
+# only supported by jenkins-packerbuilds).
+
+sleep 30
+
+echo "!!! Start of processor script !!!"
+
+PROGRAM_NAME=$(basename "$0")
+
+if [ -z "$(command -v vboxconfig)" ]; then
+    echo "${PROGRAM_NAME}: vboxconfig cannot be found on the PATH!"
+    exit 1
+fi
+
+# NOTES: this is to ensure the packer template sets the vbox vnic1 to 
+# the correct host only interface. shellcheck prefers that variable 
+# definition and exporting occur on separate lines (SC2155).
+NIC1_HOSTONLYIF1_NAME="$(vboxconfig output shellfuncs hostonlyif)"
+export NIC1_HOSTONLYIF1_NAME
+
+echo "!!! End of processor script !!!"
+
+exit 0

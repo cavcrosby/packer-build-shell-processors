@@ -3,8 +3,6 @@
 # Shell script for packer's shell processor (any preprocessing will be
 # only supported by jenkins-packerbuilds).
 
-sleep 30
-
 echo "!!! Start of processor script !!!"
 
 PROGRAM_NAME=$(basename "$0")
@@ -22,4 +20,4 @@ export NIC1_HOSTONLYIF1_NAME
 
 echo "!!! End of processor script !!!"
 
-exit 0
+# no need to exit 0, otherwise this will conclude the Jenkins build

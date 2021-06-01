@@ -12,10 +12,10 @@ if [ -z "$(command -v vboxconfig)" ]; then
     exit 1
 fi
 
-# NOTES: this is to ensure the packer template sets the vbox vnic1 to 
+# NOTES: this is to ensure the packer template sets the vbox vnic2 to 
 # the correct host only interface. shellcheck prefers that variable 
 # definition and exporting occur on separate lines (SC2155).
-NIC1_HOSTONLYIF1_NAME="$(vboxconfig output shellfuncs hostonlyif)"
+NIC2_HOSTONLYIF_NAME="$(vboxconfig output network-alias vboxnettest --real-name)"
 export NIC1_HOSTONLYIF1_NAME
 
 echo "!!! End of processor script !!!"

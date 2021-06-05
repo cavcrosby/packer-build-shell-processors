@@ -5,15 +5,15 @@
 
 echo "!!! Start of processor script !!!"
 
-PROGRAM_NAME=$(basename "$0")
+PROGRAM_NAME="$(basename "$0")"
 
 if [ -z "$(command -v vboxconfig)" ]; then
     echo "${PROGRAM_NAME}: vboxconfig cannot be found on the PATH!"
     exit 1
 fi
 
-# NOTES: this is to ensure the packer template sets the vbox vnic2 to 
-# the correct host only interface. shellcheck prefers that variable 
+# NOTES: this is to ensure the packer template sets the vbox VM's vnic2 
+# to the correct host only interface. shellcheck prefers that variable 
 # definition and exporting occur on separate lines (SC2155).
 NIC2_HOSTONLYIF_NAME="$(vboxconfig output network-alias vboxnettest --real-name)"
 export NIC1_HOSTONLYIF1_NAME

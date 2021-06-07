@@ -5,9 +5,8 @@
 
 echo "!!! Start of processor script !!!"
 
-PROGRAM_NAME="$(basename "$0")"
-
 if [ -z "$(command -v vboxconfig)" ]; then
+    # assumes PROGRAM_NAME is defined in global env
     echo "${PROGRAM_NAME}: vboxconfig cannot be found on the PATH!"
     exit 1
 fi

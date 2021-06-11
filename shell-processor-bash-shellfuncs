@@ -15,7 +15,7 @@ fi
 # to the correct host only interface. shellcheck prefers that variable 
 # definition and exporting occur on separate lines (SC2155).
 NIC2_HOSTONLYIF_NAME="$(vboxconfig output network-alias vboxnettest --real-name)"
-export NIC1_HOSTONLYIF1_NAME
+export NIC2_HOSTONLYIF_NAME
 
 echo "!!! End of processor script !!!"
 

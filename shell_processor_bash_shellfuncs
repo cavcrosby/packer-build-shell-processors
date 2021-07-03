@@ -7,11 +7,11 @@ echo "!!! Start of processor script !!!"
 
 if [ -z "$(command -v vboxconfig)" ]; then
     # assumes PROGRAM_NAME is defined in global env
-    echo "${PROGRAM_NAME}: vboxconfig cannot be found on the PATH!"
+    echo "${PROGRAM_NAME}: vboxconfig cannot be found in the PATH!"
     exit 1
 fi
 
-# NOTES: this is to ensure the packer template sets the vbox VM's vnic2 
+# This is to ensure the packer template sets the vbox VM's vnic2
 # to the correct host only interface. shellcheck prefers that variable 
 # definition and exporting occur on separate lines (SC2155).
 NIC2_HOSTONLYIF_NAME="$(vboxconfig output network-alias vboxnettest --real-name)"

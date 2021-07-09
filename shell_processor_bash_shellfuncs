@@ -3,6 +3,8 @@
 # Shell script for packer's shell processor (any preprocessing will be
 # only supported by jenkins-packerbuilds).
 
+# TODO(cavcrosby): eventually remove this file, due to shellfuncs project no longer being supported.
+
 echo "!!! Start of processor script !!!"
 
 if [ -z "$(command -v vboxconfig)" ]; then

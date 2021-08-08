@@ -1,4 +1,4 @@
-# packer-build-shell-processors
+# packer-shell-processors
 
 For reference, see https://github.com/cavcrosby/jenkins-packerbuilds.
 
